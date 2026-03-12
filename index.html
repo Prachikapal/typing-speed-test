@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Typing Speed Test</title>
+  </head>
+  <body>
+    <div style="display: none">
+      Personal best:
+      <!-- PB -->
+      WPM WPM:
+      <!-- WPM -->
+      Accuracy:
+      <!-- Accuracy -->
+      Time:
+      <!-- Time -->
+
+      Difficulty: Easy Medium Hard Mode: Timed (60s) Passage
+
+      <!-- Passage -->
+
+      Start Typing Test Or click the text and start typing
+
+      <!-- Test Complete Start -->
+
+      Test Complete! Solid run. Keep pushing to beat your high score. WPM:
+      <!-- WPM -->
+      Accuracy:
+      <!-- Accuracy -->
+      Characters:
+      <!-- Correct/Incorrect -->
+
+      Go Again Test Complete End
+    </div>
+    <header>
+      <div class="logo-container">
+        <img
+          src="./assets/images/logo-large.svg"
+          alt="keyboard logo"
+          class="desktop-logo"
+        />
+        <img
+          src="./assets/images/logo-small.svg"
+          alt="keyboard logo"
+          class="mobile-logo"
+        />
+      </div>
+      <div class="personal-best-container">
+        <img src="./assets/images/icon-personal-best.svg" alt="trophy" />
+        <p>
+          <span class="desktop-pb-score">Personal best:</span>
+          <span class="mobile-pb-score">Best</span>
+          <span>0 WPM</span>
+        </p>
+      </div>
+    </header>
+    <section class="info-section">
+      <div class="accuracy-section">
+        <div class="accuracy">
+          <span class="accuracy-label">WPM: </span><span>0</span>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="accuracy">
+          <span class="accuracy-label">Accuracy: </span><span>100%</span>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="accuracy">
+          <span class="accuracy-label">Time: </span><span>0:60</span>
+        </div>
+      </div>
+      <div class="btn-groups">
+        <div class="difficulty-btn-group desktop-dropdown">
+          <p>Difficulty:</p>
+          <button>Easy</button>
+          <button>Medium</button>
+          <button>Hard</button>
+        </div>
+        <div class="mobile-dropdown">
+          <div class="selected" id="difficulty-selected">
+            <span id="selected-text">Easy</span>
+            <img
+              src="./assets/images/icon-down-arrow.svg"
+              alt="down arrow"
+              style="vertical-align: middle"
+            />
+          </div>
+          <div class="dropdown hide" id="difficulty-dropdown">
+            <label
+              ><input type="radio" name="difficulty" value="Easy" />Easy</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="difficulty"
+                value="Medium"
+              />Medium</label
+            >
+            <label
+              ><input type="radio" name="difficulty" value="Hard" />Hard</label
+            >
+          </div>
+        </div>
+        <div class="desktop-dropdown">
+          <p>Mode:</p>
+          <button>Timed (60)</button>
+          <button>Passage</button>
+        </div>
+        <div class="mobile-dropdown">
+          <div class="selected" id="mode-selected">
+            <span id="selected-mode">Timed (60)</span>
+            <img
+              src="./assets/images/icon-down-arrow.svg"
+              alt="down arrow"
+              style="vertical-align: middle"
+            />
+          </div>
+          <div class="dropdown hide" id="mode-dropdown">
+            <label
+              ><input type="radio" name="mode" value="Timed (60)" />Timed
+              (60)</label
+            >
+            <label
+              ><input type="radio" name="mode" value="Passage" />Passage</label
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <main>
+      <div class="blur">
+        <button id="startTestBtn">Start Typing Test</button>
+        <p>Or click the text and start typing</p>
+      </div>
+      <textarea class="text-editor">Something to test</textarea>
+      <button class="retake-btn">
+        Retake Test
+        <img
+          src="./assets/images/icon-restart.svg"
+          alt="retake"
+          style="vertical-align: bottom"
+        />
+      </button>
+    </main>
+
+    <script src="./scripts/dropdown.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
