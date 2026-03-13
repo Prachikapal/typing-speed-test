@@ -91,7 +91,7 @@
       <div class="btn-groups">
         <div class="difficulty-btn-group desktop-dropdown">
           <p>Difficulty:</p>
-          <button>Easy</button>
+          <button class="selectedBtn">Easy</button>
           <button>Medium</button>
           <button>Hard</button>
         </div>
@@ -122,8 +122,8 @@
         </div>
         <div class="desktop-dropdown">
           <p>Mode:</p>
-          <button>Timed (60)</button>
-          <button>Passage</button>
+          <button class="modeBtn">Timed (60)</button>
+          <button class="modeBtn selectedBtn">Passage</button>
         </div>
         <div class="mobile-dropdown">
           <div class="selected" id="mode-selected">
@@ -151,7 +151,7 @@
         <button id="startTestBtn">Start Typing Test</button>
         <p>Or click the text and start typing</p>
       </div>
-      <textarea class="text-editor">Something to test</textarea>
+      <textarea class="text-editor"></textarea>
       <button class="retake-btn">
         Retake Test
         <img

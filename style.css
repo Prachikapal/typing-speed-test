@@ -173,11 +173,20 @@ main {
     border-radius: 5px;
 }
 
+.selectedBtn{
+    border-color: hsl(210, 100%, 65%) !important;
+    color: hsl(210, 100%, 65%) !important;
+}
+
 .hide{
     display: none;
 }
 
 #startTestBtn:hover{
+    cursor: pointer;
+}
+
+.desktop-dropdown button:hover{
     cursor: pointer;
 }
 
