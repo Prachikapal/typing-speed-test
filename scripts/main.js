@@ -23,9 +23,8 @@ document.getElementById("startTestBtn").addEventListener("click", () => {
 
 //Restart button click event
 resetBtn.addEventListener("click", () => {
-    document.querySelector(".blur").style.display = "flex";
-})
-
+  document.querySelector(".blur").style.display = "flex";
+});
 
 //Level button click event in desktop
 levelBtns.forEach((elem) => {
@@ -64,7 +63,19 @@ async function loadFileData(level) {
   fetch(`./Passages/${randomPassage}.txt`)
     .then((res) => res.text())
     .then((data) => {
-      document.querySelector(".text-editor").innerHTML = data;
+      document.querySelector(".text-editor").value = "";
+      const removeDiv = document.querySelector(".static-text");
+      if (removeDiv) {
+        document.querySelector(".editor-container").removeChild(removeDiv);
+      }
+      const div = document.createElement("div");
+      div.innerText = data;
+      div.classList.add("static-text");
+      console.log(document.querySelector(".editor-container"));
+
+      document.querySelector(".editor-container").appendChild(div);
     })
-    .catch((err) => console.log("Error occurred while loading the file data"));
+    .catch((err) =>
+      console.log("Error occurred while loading the file data", err),
+    );
 }

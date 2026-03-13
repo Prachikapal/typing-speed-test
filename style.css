@@ -99,6 +99,18 @@ header {
   padding: 10px;
   outline: none;
   font-size: 1rem;
+  font-family: "Sora", sans-serif;
+}
+
+.static-text{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    margin: 10px 0px;
+    padding: 10px;
+    text-align: left;
+    font-size: 1rem;
+    color: hsl(240, 1%, 59%);
 }
 
 main {
@@ -188,6 +200,11 @@ main {
 
 .desktop-dropdown button:hover{
     cursor: pointer;
+}
+
+.static{
+    position: absolute;
+    left: 0;
 }
 
 /* Mobile Responsive */
