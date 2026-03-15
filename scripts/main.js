@@ -15,9 +15,22 @@ const resetBtn = document.querySelector(".retake-btn");
 //Start Button click event
 document.getElementById("startTestBtn").addEventListener("click", () => {
   document.querySelector(".blur").style.display = "none";
-  const selected = document.querySelectorAll(".selectedBtn");
-  const level = selected[0].textContent;
-  const mode = selected[1].textContent;
+  let level;
+  let mode;
+  if (
+    window.getComputedStyle(document.querySelector(".desktop-dropdown"))
+      .display != "none"
+  ) {
+    var selected = document.querySelectorAll(".selectedBtn");
+    level = selected[0].textContent;
+    mode = selected[1].textContent;
+  } else {
+    level = document.querySelector("#selected-text").textContent;
+    mode = document.querySelector("#selected-mode").textContent;
+  }
+  if (mode === "Timed (60)") {
+    startTimer();
+  }
   loadFileData(level);
 });
 
@@ -53,9 +66,40 @@ modeButtons.forEach((elem) => {
       element.classList.remove("selectedBtn");
     });
     elem.classList.add("selectedBtn");
+    if (
+      elem.innerText === "Timed (60)" &&
+      document.querySelector(".blur").style.display == "none"
+    ) {
+      startTimer();
+    }
   });
 });
 
+//Add event listiner in mobile timer mode
+document.getElementById("timerMode").addEventListener("click", (e) => {
+  if (document.querySelector(".blur").style.display == "none") {
+    startTimer();
+  }
+});
+
+//Start 60sec timer
+const startTimer = () => {
+  console.log("timer Started");
+  let counter = document.getElementById("counter");
+  let i = 60;
+  const timer = setInterval(() => {
+    i--;
+    if (i >= 10) {
+      counter.textContent = i;
+    } else if (i >= 0) {
+      counter.textContent = "0" + i;
+    } else {
+      clearInterval(timer);
+    }
+  }, 1000);
+};
+
+//Load passage from the .txt file
 async function loadFileData(level) {
   const random = Math.floor(Math.random() * 3);
   const randomPassage = passeges[level][random];
@@ -71,7 +115,6 @@ async function loadFileData(level) {
       const div = document.createElement("div");
       div.innerText = data;
       div.classList.add("static-text");
-      console.log(document.querySelector(".editor-container"));
 
       document.querySelector(".editor-container").appendChild(div);
     })

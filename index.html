@@ -85,7 +85,7 @@
         </div>
         <div class="vertical-line"></div>
         <div class="accuracy">
-          <span class="accuracy-label">Time: </span><span>0:60</span>
+          <span class="accuracy-label">Time: </span>0:<span id="counter">60</span>
         </div>
       </div>
       <div class="btn-groups">
@@ -127,7 +127,7 @@
         </div>
         <div class="mobile-dropdown">
           <div class="selected" id="mode-selected">
-            <span id="selected-mode">Timed (60)</span>
+            <span id="selected-mode">Passage</span>
             <img
               src="./assets/images/icon-down-arrow.svg"
               alt="down arrow"
@@ -136,7 +136,7 @@
           </div>
           <div class="dropdown hide" id="mode-dropdown">
             <label
-              ><input type="radio" name="mode" value="Timed (60)" />Timed
+              ><input type="radio" name="mode" value="Timed (60)" id="timerMode"/>Timed
               (60)</label
             >
             <label
